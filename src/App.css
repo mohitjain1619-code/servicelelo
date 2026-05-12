@@ -1,0 +1,558 @@
+.app-container {
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #1a0b16, #050505);
+}
+
+/* Language Overlay */
+.lang-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lang-content h1 {
+  font-size: 5rem;
+  color: var(--primary);
+  text-shadow: 0 0 20px var(--primary-glow);
+  margin-bottom: 2rem;
+}
+
+.lang-btns {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Top Warning Banner */
+.warning-banner {
+  width: 100%;
+  background: #ff0000;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  font-family: 'Bangers', cursive;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  box-shadow: 0 5px 20px rgba(255, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  text-transform: uppercase;
+}
+
+/* Hero Section - Vertical Flow */
+.hero-vertical {
+  padding: 120px 0 60px;
+  text-align: center;
+}
+
+.vertical-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.main-heading {
+  font-size: 4.5rem;
+  line-height: 1;
+  text-shadow: 0 10px 30px rgba(255, 0, 85, 0.3);
+}
+
+.bio-intro {
+  font-size: 1.5rem;
+  color: var(--secondary);
+  font-weight: 500;
+  max-width: 600px;
+}
+
+.vertical-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+}
+
+.profile-pic-large {
+  width: 100%;
+  height: auto;
+  display: block;
+  clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+}
+
+.glow-effect {
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+  pointer-events: none;
+}
+
+.bio-extended {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #ddd;
+  text-align: justify;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2rem;
+  border-right: 4px solid var(--primary);
+  border-left: 4px solid var(--secondary);
+}
+
+.bold-callout {
+  margin-top: 1.5rem;
+  font-family: 'Bangers', cursive;
+  font-size: 2rem;
+  color: var(--primary);
+  text-align: center;
+}
+
+.social-cta {
+  margin-top: 1rem;
+}
+
+/* Social Section */
+.social-section {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--primary);
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.social-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-decoration: none;
+  border-radius: 20px;
+}
+
+.social-card:hover {
+  border-color: var(--accent-color);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 40px -10px var(--accent-color);
+  transform: translateY(-10px) scale(1.02);
+}
+
+.social-card:hover .icon-wrapper {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 15px var(--accent-color));
+}
+
+.icon-wrapper {
+  font-size: 3rem;
+  color: var(--accent-color);
+  filter: drop-shadow(0 0 10px var(--accent-color));
+}
+
+.social-card span {
+  font-family: 'Bangers', cursive;
+  font-size: 1.5rem;
+  color: #fff;
+  z-index: 1;
+}
+
+/* Bhabhi Gallery Section */
+.bhabhi-gallery {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.section-header {
+  margin-bottom: 4rem;
+}
+
+.section-subtitle {
+  font-size: 1.5rem;
+  color: var(--secondary);
+  margin-top: 1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bhabhi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.bhabhi-card {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bhabhi-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.bhabhi-card:hover .bhabhi-img {
+  transform: scale(1.1);
+}
+
+.img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.bhabhi-card:hover .img-overlay {
+  opacity: 0.3;
+}
+
+/* Fantasy Section Specifics */
+.fantasy-section {
+  background: linear-gradient(to bottom, transparent, rgba(255, 0, 85, 0.05), transparent);
+}
+
+.highlight-text {
+  color: #ff0055 !important;
+  text-shadow: 0 0 20px rgba(255, 0, 85, 0.5);
+}
+
+.fantasy-card {
+  border-color: rgba(255, 0, 85, 0.2);
+}
+
+.fantasy-card:hover {
+  border-color: #ff0055;
+  box-shadow: 0 0 30px rgba(255, 0, 85, 0.2);
+}
+
+.fantasy-overlay {
+  background: linear-gradient(to top, rgba(255, 0, 85, 0.4), transparent);
+}
+
+/* Young Section Specifics */
+.young-section {
+  background: linear-gradient(to bottom, transparent, rgba(0, 242, 255, 0.05), transparent);
+}
+
+.young-highlight {
+  color: #00f2ff !important;
+  text-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+}
+
+.young-card {
+  border-color: rgba(0, 242, 255, 0.2);
+}
+
+.young-card:hover {
+  border-color: #00f2ff;
+  box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
+}
+
+.young-overlay {
+  background: linear-gradient(to top, rgba(0, 242, 255, 0.4), transparent);
+}
+
+/* Romantic Section Specifics */
+.romantic-section {
+  background: linear-gradient(to bottom, transparent, rgba(255, 174, 0, 0.05), transparent);
+}
+
+.romantic-highlight {
+  color: #ffae00 !important;
+  text-shadow: 0 0 20px rgba(255, 174, 0, 0.5);
+}
+
+.romantic-card {
+  border-color: rgba(255, 174, 0, 0.2);
+}
+
+.romantic-card:hover {
+  border-color: #ffae00;
+  box-shadow: 0 0 30px rgba(255, 174, 0, 0.2);
+}
+
+.romantic-overlay {
+  background: linear-gradient(to top, rgba(255, 174, 0, 0.4), transparent);
+}
+
+/* Bottom Section Specifics */
+.bottom-section {
+  background: linear-gradient(to bottom, transparent, rgba(50, 255, 50, 0.05), transparent);
+}
+
+.bottom-highlight {
+  color: #32ff32 !important;
+  text-shadow: 0 0 20px rgba(50, 255, 50, 0.5);
+}
+
+.bottom-card {
+  border-color: rgba(50, 255, 50, 0.2);
+}
+
+.bottom-card:hover {
+  border-color: #32ff32;
+  box-shadow: 0 0 30px rgba(50, 255, 50, 0.2);
+}
+
+.bottom-overlay {
+  background: linear-gradient(to top, rgba(50, 255, 50, 0.4), transparent);
+}
+
+/* Media Section */
+.media-section {
+  padding-bottom: 100px;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.video-wrapper {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.media-placeholder {
+  height: 100%;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bangers', cursive;
+  font-size: 2rem;
+  color: #333;
+}
+
+.media-info {
+  background: var(--primary);
+  color: #fff;
+  padding: 1rem;
+}
+
+/* Booking Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(15px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.modal-content {
+  background: #000;
+  border: 3px solid var(--primary);
+  max-width: 450px;
+  position: relative;
+  padding: 3rem 2rem 2rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.input-group label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+}
+
+.input-group input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  padding: 0.8rem;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.calendar-centered {
+  align-items: center !important;
+}
+
+.date-picker-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+/* React Datepicker Custom Styles */
+.react-datepicker {
+  background-color: #000 !important;
+  border: 1px solid var(--primary) !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.react-datepicker__header {
+  background-color: #111 !important;
+  border-bottom: 1px solid var(--glass-border) !important;
+}
+
+.react-datepicker__current-month, 
+.react-datepicker__day-name, 
+.react-datepicker-time__header {
+  color: #fff !important;
+}
+
+.react-datepicker__day {
+  color: #ccc !important;
+}
+
+.react-datepicker__day:hover {
+  background-color: var(--primary) !important;
+  color: #fff !important;
+}
+
+.react-datepicker__day--selected {
+  background-color: var(--primary) !important;
+  color: #fff !important;
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.react-datepicker__time-container {
+  border-left: 1px solid var(--glass-border) !important;
+  background-color: #000 !important;
+  width: 100px !important;
+}
+
+.react-datepicker__time-box {
+  background-color: #000 !important;
+  width: 100% !important;
+}
+
+.react-datepicker__time-list-item {
+  color: #fff !important;
+  background-color: #000 !important;
+  padding: 10px 5px !important;
+}
+
+.react-datepicker__time-list-item:hover {
+  background-color: var(--primary) !important;
+  color: #fff !important;
+}
+
+.react-datepicker__time-list-item--selected {
+  background-color: var(--primary) !important;
+  color: #fff !important;
+}
+
+.readonly-input {
+  background: rgba(0, 242, 255, 0.05) !important;
+  border-color: rgba(0, 242, 255, 0.2) !important;
+  color: var(--secondary) !important;
+  cursor: not-allowed;
+  font-weight: 600;
+}
+
+.full-width {
+  width: 100%;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 50px 0;
+  border-top: 1px solid var(--glass-border);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .hero-vertical {
+    padding-top: 80px;
+  }
+  .main-heading {
+    font-size: 3rem;
+  }
+  .social-grid {
+    grid-template-columns: 1fr;
+  }
+  .bhabhi-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+  .bhabhi-card {
+    height: 350px;
+  }
+  .section-subtitle {
+    font-size: 1.1rem;
+  }
+}
