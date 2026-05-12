@@ -1,14 +1,53 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Instagram, Facebook, Send, Ghost, AlertTriangle, ShieldCheck, Lock, Video } from 'lucide-react';
+import { Instagram, Facebook, Send, Ghost, ChevronRight, AlertTriangle, ShieldCheck, Lock, Video } from 'lucide-react';
 import Lenis from 'lenis';
 import { translations } from './translations';
 import './App.css';
 import Particles from './Particles';
 import profileImg from './assets/image1.jpeg';
 
+// Import Bhabhi Images
+import b1 from '../images/married bhabhi/bhabhi1.jpeg';
+import b2 from '../images/married bhabhi/bhabhi2.jpeg';
+import b3 from '../images/married bhabhi/bhabhi3.jpeg';
+import b5 from '../images/married bhabhi/bhabhi5.jpeg';
+import b6 from '../images/married bhabhi/bhabhi6.jpeg';
+import b14 from '../images/married bhabhi/bhabhi14.jpeg';
+
+// Import Fantasy Images
+import f1 from '../images/fantasy/fan1.jpeg';
+import f2 from '../images/fantasy/fan2.jpeg';
+import f3 from '../images/fantasy/fan3.jpeg';
+import f4 from '../images/fantasy/fan4.jpeg';
+import f5 from '../images/fantasy/fan5.jpeg';
+import f6 from '../images/fantasy/fan6.jpeg';
+
+// Import Young Girls Images
+import g1 from '../images/young girls/girl1.jpeg';
+import g2 from '../images/young girls/girl2.jpeg';
+import g3 from '../images/young girls/girl3.jpeg';
+import g4 from '../images/young girls/girl4.jpeg';
+import g5 from '../images/young girls/girl5.jpeg';
+import g6 from '../images/young girls/girl6.jpeg';
+import g7 from '../images/young girls/girl7.jpeg';
+import g8 from '../images/young girls/girl8.jpeg';
+
+// Import Romantic Images
+import r1 from '../images/romantic/romantic1.jpeg';
+import r2 from '../images/romantic/romantic2.jpeg';
+import r3 from '../images/romantic/romantic3.jpeg';
+import r4 from '../images/romantic/romantic4.jpeg';
+import r5 from '../images/romantic/romantic5.jpeg';
+import r6 from '../images/romantic/romantic6.jpeg';
+
+// Import Bottom Images
+import d1 from '../images/bottom/dick1.jpeg';
+import d2 from '../images/bottom/dick2.jpeg';
+
 const App = () => {
   const [lang, setLang] = useState(null);
+
   const t = lang ? translations[lang] : translations.hinglish;
 
   useEffect(() => {
@@ -27,19 +66,18 @@ const App = () => {
     { id: 'snapchat', name: 'Snapchat', icon: <Ghost />, color: '#FFFC00', url: 'https://www.snapchat.com/add/legacyloading11' }
   ];
 
-  // Placeholder gallery data — images will be added later
-  const bhabhiSlots = Array(6).fill(null);
-  const fantasySlots = Array(6).fill(null);
-  const youngSlots = Array(8).fill(null);
-  const romanticSlots = Array(6).fill(null);
-  const bottomSlots = Array(2).fill(null);
+  const bhabhiImages = [b1, b2, b3, b5, b6, b14];
+  const fantasyImages = [f1, f2, f3, f4, f5, f6];
+  const youngImages = [g1, g2, g3, g4, g5, g6, g7, g8];
+  const romanticImages = [r1, r2, r3, r4, r5, r6];
+  const bottomImages = [d1, d2];
   const videoSlots = Array(6).fill(null);
 
   return (
     <div className="app-container">
       <Particles />
 
-      {/* Top Warning Banner */}
+      {/* Top Warning Banner - Always Visible */}
       <motion.div
         className="warning-banner"
         initial={{ opacity: 0, y: -50 }}
@@ -79,7 +117,7 @@ const App = () => {
 
       {lang && (
         <>
-          {/* Hero & Bio Section */}
+          {/* Hero & Bio Section - Vertical Flow */}
           <section className="hero-vertical container">
             <motion.div
               className="vertical-content"
@@ -140,19 +178,17 @@ const App = () => {
               <p className="section-subtitle">{t.bhabhiText}</p>
             </div>
             <div className="bhabhi-grid">
-              {bhabhiSlots.map((_, i) => (
+              {bhabhiImages.map((img, i) => (
                 <motion.div
                   key={i}
-                  className="bhabhi-card img-placeholder-card"
+                  className="bhabhi-card"
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: i * 0.08 }}
+                  transition={{ delay: i * 0.1 }}
                   whileHover={{ y: -10, scale: 1.02 }}
                 >
-                  <div className="placeholder-inner">
-                    <span>📸</span>
-                    <p>Photo Coming Soon</p>
-                  </div>
+                  <img src={img} alt={`Bhabhi ${i + 1}`} className="bhabhi-img" />
+                  <div className="img-overlay"></div>
                 </motion.div>
               ))}
             </div>
@@ -165,19 +201,17 @@ const App = () => {
               <p className="section-subtitle">{t.fantasyText}</p>
             </div>
             <div className="bhabhi-grid">
-              {fantasySlots.map((_, i) => (
+              {fantasyImages.map((img, i) => (
                 <motion.div
                   key={i}
-                  className="bhabhi-card fantasy-card img-placeholder-card"
+                  className="bhabhi-card fantasy-card"
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: i * 0.08 }}
+                  transition={{ delay: i * 0.1 }}
                   whileHover={{ y: -10, scale: 1.02 }}
                 >
-                  <div className="placeholder-inner fantasy-placeholder">
-                    <span>🔥</span>
-                    <p>Photo Coming Soon</p>
-                  </div>
+                  <img src={img} alt={`Fantasy ${i + 1}`} className="bhabhi-img" />
+                  <div className="img-overlay fantasy-overlay"></div>
                 </motion.div>
               ))}
             </div>
@@ -190,19 +224,17 @@ const App = () => {
               <p className="section-subtitle">{t.youngText}</p>
             </div>
             <div className="bhabhi-grid">
-              {youngSlots.map((_, i) => (
+              {youngImages.map((img, i) => (
                 <motion.div
                   key={i}
-                  className="bhabhi-card young-card img-placeholder-card"
+                  className="bhabhi-card young-card"
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: i * 0.08 }}
+                  transition={{ delay: i * 0.1 }}
                   whileHover={{ y: -10, scale: 1.02 }}
                 >
-                  <div className="placeholder-inner young-placeholder">
-                    <span>✨</span>
-                    <p>Photo Coming Soon</p>
-                  </div>
+                  <img src={img} alt={`Young Girl ${i + 1}`} className="bhabhi-img" />
+                  <div className="img-overlay young-overlay"></div>
                 </motion.div>
               ))}
             </div>
@@ -215,25 +247,23 @@ const App = () => {
               <p className="section-subtitle">{t.romanticText}</p>
             </div>
             <div className="bhabhi-grid">
-              {romanticSlots.map((_, i) => (
+              {romanticImages.map((img, i) => (
                 <motion.div
                   key={i}
-                  className="bhabhi-card romantic-card img-placeholder-card"
+                  className="bhabhi-card romantic-card"
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: i * 0.08 }}
+                  transition={{ delay: i * 0.1 }}
                   whileHover={{ y: -10, scale: 1.02 }}
                 >
-                  <div className="placeholder-inner romantic-placeholder">
-                    <span>💖</span>
-                    <p>Photo Coming Soon</p>
-                  </div>
+                  <img src={img} alt={`Romantic Friend ${i + 1}`} className="bhabhi-img" />
+                  <div className="img-overlay romantic-overlay"></div>
                 </motion.div>
               ))}
             </div>
           </section>
 
-          {/* Bottom Section with Trust Text + Images + Video Slots */}
+          {/* Bottom CTA Section */}
           <section className="bhabhi-gallery container bottom-section">
             <div className="section-header">
               <h2 className="section-title bottom-highlight">{t.bottomTitle}</h2>
@@ -261,21 +291,18 @@ const App = () => {
               </p>
             </motion.div>
 
-            {/* 2 Bottom Images */}
-            <div className="bhabhi-grid bottom-two-grid">
-              {bottomSlots.map((_, i) => (
+            <div className="bhabhi-grid">
+              {bottomImages.map((img, i) => (
                 <motion.div
                   key={i}
-                  className="bhabhi-card bottom-card img-placeholder-card"
+                  className="bhabhi-card bottom-card"
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: i * 0.15 }}
+                  transition={{ delay: i * 0.1 }}
                   whileHover={{ y: -10, scale: 1.02 }}
                 >
-                  <div className="placeholder-inner bottom-placeholder">
-                    <span>📷</span>
-                    <p>Photo Coming Soon</p>
-                  </div>
+                  <img src={img} alt={`Bottom ${i + 1}`} className="bhabhi-img" />
+                  <div className="img-overlay bottom-overlay"></div>
                 </motion.div>
               ))}
             </div>
