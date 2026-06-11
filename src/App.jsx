@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Instagram, Facebook, Send, Ghost, ChevronRight, AlertTriangle, ShieldCheck, Lock, Video } from 'lucide-react';
+import { Instagram, Facebook, Send, Ghost, AlertTriangle, ShieldCheck, Lock, Video } from 'lucide-react';
 import Lenis from 'lenis';
 import { translations } from './translations';
 import './App.css';
